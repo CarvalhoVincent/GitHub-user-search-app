@@ -105,14 +105,14 @@ select {
 
 /* remove animations for people who've turned them off */
 @media (prefers-reduced-motion: reduce) {  
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
 
 
@@ -137,7 +137,7 @@ select {
 }
 
 .flow > *:where(:not(:first-child)) {
-    margin-top: var(--flow-space, 1rem);
+    margin-top: var(--flow-space, 1.5rem);
 }
 
 .container {
@@ -148,15 +148,15 @@ select {
 }
 
 .sr-only {
-  position: absolute; 
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px; 
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap; /* added line */
-  border: 0;
+    position: absolute; 
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px; 
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap; /* added line */
+    border: 0;
 }
 
 /* colors */
@@ -208,6 +208,93 @@ select {
     display: inline;
 }
 
+.infos {
+    margin-top: 1rem;
+    width: 100%;
+    background-color: hsl( var(--clr-white) );
+    border-radius: 15px;
+    box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
+}
+
+.presentation {
+    padding-top: 2rem;
+    padding-left: 1.5rem;
+}
+
+.right {
+    flex-direction: column;
+}
+
+.bio {
+    margin-top: 2.07rem;
+    margin-bottom: 1.45rem;
+    padding-inline: 1.5rem;
+}
+
+.grid-data {
+    display: grid;
+    grid-template-areas: 
+    'repos followers following'
+    'nbr-repos nbr-followers nbr-following';
+    row-gap: .4rem;
+    margin: 0 1.5rem;
+    background-color: hsl( var(--clr-darkWhite) );
+    border-radius: 10px;
+    padding-top: 1.1rem;
+    padding-bottom: 1.1rem;
+    justify-content: space-around;
+}
+
+.repos {
+grid-area: repos;
+}
+
+.followers {
+grid-area: followers;
+}
+
+.following {
+grid-area: following;
+}
+
+#obj-repos {
+grid-area: nbr-repos;
+justify-self: center;
+}
+
+#obj-followers {
+grid-area: nbr-followers;
+justify-self: center;
+}
+
+#obj-following {
+grid-area: nbr-following;
+justify-self: center;
+}
+
+.list {
+    list-style: none;
+    padding-bottom: 4rem;
+    padding-inline-start: 1.5rem;
+}
+
+.list img {
+    display: inline;
+}
+
+.list a, .list p  {
+    display: inline;
+    position: relative;
+    left: 2rem;
+    top: .4rem;
+    text-decoration: none;
+    color: hsl( var(--clr-marine) );
+}
+
+.list a:hover, .list a:focus {
+    cursor: pointer;
+    text-decoration: underline;
+}
 
 /* Components */
 

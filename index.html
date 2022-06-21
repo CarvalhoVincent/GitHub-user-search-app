@@ -25,11 +25,34 @@
             <input id="search" class="fs-200" placeholder="Search GitHub username...">
             <button class="ff-bold" onclick="getData()">Search</button>
         </div>
-        Joined
+        <article class="infos">
+            <div class="presentation flex">
+                <img src="" alt="avatar" id="obj-avatar">
+                <div class="right flex">
+                    <h2 id="obj-name" class="ff-bold fs-500 text-dark">The Octocat</h2>
+                    <a id="obj-username" href="">@octocat</a>
+                    <p id="obj-date">Joined</p>
+                </div>
+            </div>
 
-        Repos
-        Followers
-        Following
+            <p id="obj-bio" class="bio">Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+            <div class="grid-data">
+                <p class="repos fs-200">Repos</p>
+                <p class="followers fs-200">Followers</p>
+                <p class="following fs-200">Following</p>
+                <p id="obj-repos" class="ff-bold text-dark">9</p>
+                <p id="obj-followers" class="ff-bold text-dark">3453</p>
+                <p id="obj-following" class="ff-bold text-dark">0</p>
+            </div>
+
+            <ul class="list flow">
+                <li id="obj-location"><img src="./assets/icon-location.svg" alt="icon-location" class="icon-location"><p>San Francisco</p></li>
+                <li><img src="./assets/icon-website.svg" alt="icon-website"><a id="obj-website" href="">github.com</a></li>
+                <li><img src="./assets/icon-twitter.svg" alt="icon-twitter"><a id="obj-twitter" href="">Not available</a></li>
+                <li><img src="./assets/icon-company.svg" alt="icon-company"><a id="obj-company" href="">GitHub</a></li>
+            </ul>
+
+        </article>
     </main>
 
     <script src="index.js"></script>
