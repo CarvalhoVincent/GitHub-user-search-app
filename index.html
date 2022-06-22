@@ -23,6 +23,7 @@
         <div class="searchBar flex">
             <img src="./assets/icon-search.svg" alt="search">
             <input id="search" class="fs-200" placeholder="Search GitHub username...">
+            <div id="search-err" class="err-msg">No results</div>
             <button class="ff-bold" onclick="getData()">Search</button>
         </div>
         <article class="infos">
@@ -46,10 +47,10 @@
             </div>
 
             <ul class="list flow">
-                <li><img src="./assets/icon-location.svg" alt="icon-location" class="icon-location"><p id="obj-location"></p></li>
-                <li><img src="./assets/icon-website.svg" alt="icon-website"><a id="obj-website" href=""></a></li>
-                <li><img src="./assets/icon-twitter.svg" alt="icon-twitter"><a id="obj-twitter" href=""></a></li>
-                <li><img src="./assets/icon-company.svg" alt="icon-company"><a id="obj-company" href=""></a></li>
+                <li id="list-item1"><img src="./assets/icon-location.svg" alt="icon-location" class="icon-location"><p id="obj-location"></p></li>
+                <li id="list-item2"><img src="./assets/icon-website.svg" alt="icon-website"><a id="obj-website" target="_blank" href=""></a></li>
+                <li id="list-item3"><img src="./assets/icon-twitter.svg" alt="icon-twitter"><a id="obj-twitter" target="_blank" href=""></a></li>
+                <li id="list-item4"><img src="./assets/icon-company.svg" alt="icon-company"><a id="obj-company" target="_blank" href=""></a></li>
             </ul>
 
         </article>

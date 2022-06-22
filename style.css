@@ -245,6 +245,24 @@ select {
     justify-content: space-around;
 }
 
+@media (max-width: 315px) {
+    .grid-data {
+        grid-template-areas: 
+        'repos'
+        'nbr-repos'
+        'followers'
+        'nbr-followers'
+        'following'
+        'nbr-following';
+        place-items: center;
+        row-gap: 0;
+    }
+
+    .followers, .following {
+        margin-top: .8rem;
+    }
+}
+
 .repos {
 grid-area: repos;
 }
@@ -296,6 +314,16 @@ justify-self: center;
     text-decoration: underline;
 }
 
+.opacity {
+    opacity: .5;
+}
+
+@media (max-width: 315px) {
+    .list a, .list p  {
+        font-size: .8rem;
+    }
+}
+
 /* Components */
 
 .searchBar {
@@ -313,6 +341,17 @@ justify-self: center;
     border: none;
     border-radius: 15px;
     outline: none;
+}
+
+.err-msg {
+
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 16px;
+    text-align: right;
+    padding-top: 1rem;
+    color: red;
+    display: none;
 }
 
 .main button {
