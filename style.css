@@ -80,7 +80,7 @@ p {
 body {
     font-family: var(--ff-reg);
     font-size: var(--fs-400);
-    color: hsl( var(--clr-marine) );
+    color: hsl( var(--clr-grayBlue) );
     background-color: hsl( var(--clr-darkWhite) );
     line-height: 1.5;
     min-height: 100vh;
@@ -286,7 +286,7 @@ justify-self: center;
     display: inline;
     position: relative;
     left: 2rem;
-    top: .4rem;
+    top: .5rem;
     text-decoration: none;
     color: hsl( var(--clr-marine) );
 }
