@@ -147,6 +147,13 @@ select {
     margin-top: 2rem;
 }
 
+@media (min-width: 35rem) {
+    .container {
+        padding-inline: 4rem;
+    }
+
+}
+
 .sr-only {
     position: absolute; 
     width: 1px;
@@ -194,12 +201,24 @@ select {
     justify-content: space-between;
 }
 
+@media (min-width: 35rem) {
+    .header {
+        margin-top: 8.75rem;
+    }
+
+}
+
 .mode {
     align-self: flex-start;
     border: none;
-    background-color: transparent;
+    background: transparent;
     cursor: pointer;
     letter-spacing: 2.5px;
+}
+
+.mode:hover,
+.mode:active {
+    color: hsla(220, 18%, 16%, 1);
 }
 
 .mode > img {
@@ -221,8 +240,67 @@ select {
     padding-left: 1.5rem;
 }
 
+.avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+@media (min-width: 35rem) {
+    .avatar {
+        width: 117px;
+        height: 117px;
+    }
+
+}
+
 .right {
     flex-direction: column;
+}
+
+@media (min-width: 35rem) {
+    .right {
+        margin-left: 2.5rem;
+        margin-top: 1rem;
+    }
+
+}
+
+#obj-name {
+    margin-block-end: 0;
+    position: relative;
+    bottom: .3rem;
+}
+
+@media (min-width: 35rem) {
+    #obj-name {
+        font-size: var(--fs-600);
+    }
+
+}
+
+#obj-username {
+position: relative;
+bottom: .9rem;
+}
+
+@media (min-width: 35rem) {
+    #obj-username {
+        bottom: 0;
+    }
+
+}
+
+#obj-date {
+    position: relative;
+    bottom: .5rem;
+}
+
+@media (min-width: 35rem) {
+    #obj-date {
+        top: .5rem;
+    }
+
 }
 
 .bio {
@@ -294,6 +372,43 @@ justify-self: center;
     list-style: none;
     padding-bottom: 4rem;
     padding-inline-start: 1.5rem;
+    grid-template-areas: 
+    'item1'
+    'item2'
+    'item3'
+    'item4';
+    grid-template-columns: 80%;
+    overflow-wrap: break-word;
+}
+
+@media (min-width: 700px) {
+    .list {
+        grid-template-areas: 
+        'item1 item3'
+        'item2 item4';
+        grid-template-columns: 50%;
+    }
+
+    .list > #list-item1 {
+        position: relative;
+        top: 1.5rem;
+    }
+}
+
+#list-item1 {
+    grid-area: item1;
+}
+
+#list-item2 {
+    grid-area: item2;
+}
+
+#list-item3 {
+    grid-area: item3;
+}
+
+#list-item4 {
+    grid-area: item4;
 }
 
 .list img {
@@ -303,7 +418,7 @@ justify-self: center;
 .list a, .list p  {
     display: inline;
     position: relative;
-    left: 2rem;
+    left: 1.5rem;
     top: .5rem;
     text-decoration: none;
     color: hsl( var(--clr-marine) );
@@ -336,6 +451,14 @@ justify-self: center;
     margin-top: 2.25rem;
 }
 
+.searchBar img {
+    position: relative;
+    height: 20px;
+    width: 20px;
+    top: .8rem;
+    left: .8rem;
+}
+
 .main input {
     flex-grow: 2;
     border: none;
@@ -344,17 +467,20 @@ justify-self: center;
 }
 
 .err-msg {
-
-    font-weight: 500;
     font-size: 11px;
-    line-height: 16px;
     text-align: right;
     padding-top: 1rem;
     color: red;
     display: none;
 }
 
-.main button {
+@media (max-width: 423px) {
+    .err-msg {
+        padding-top: .5rem;
+    }
+}
+
+.searchBar button {
     position: relative;
     background-color: hsl( var(--clr-blue));
     color: hsl( var(--clr-white) );
@@ -366,7 +492,11 @@ justify-self: center;
     top: .3rem;
 }
 
-.main button:active {
+.searchBar button:hover {
+    background-color: hsl( var(--clr-blue) / .7);
+}
+
+.searchBar button:active {
     transform: translateY(1px);
 }
 
@@ -376,7 +506,7 @@ justify-self: center;
         font-size: 8px;
     }
 
-    .main button {
+    .searchBar button {
         font-size: 10px;   
         height: 2.4rem;
         width: 3.75rem;
@@ -384,7 +514,7 @@ justify-self: center;
     }
 }
 
-.main img {
+.list img {
     position: relative;
     height: 20px;
     width: 20px;

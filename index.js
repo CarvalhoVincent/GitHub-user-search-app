@@ -18,15 +18,12 @@ var item4 = document.getElementById("list-item4");
 
 var err = document.getElementById("search-err");  
 
-
 var request = new XMLHttpRequest();
 
 request.open('GET', "https://api.github.com/users/Octocat", true)
 request.onload = function () {
 
 var data = JSON.parse(this.response)
-
-console.log(data);
 
     avatar.src = data.avatar_url;
 
@@ -106,8 +103,6 @@ function getData() {
         if (data.message === "Not Found") {
             err.style.display = "initial";
         } else {
-    
-    console.log(data);
 
         avatar.src = data.avatar_url;
 
