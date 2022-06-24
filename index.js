@@ -34,6 +34,7 @@ var data = JSON.parse(this.response)
     }
     
     user.innerHTML = "@" + data.login;
+    user.setAttribute("href", "https://github.com/" + data.login);
 
     // Date Format //
     var origDateFormat = data.created_at;
@@ -113,6 +114,8 @@ function getData() {
         }
         
         user.innerHTML = "@" + data.login;
+        user.setAttribute("href", "https://github.com/" + data.login);
+
 
         // Date Format //
         var origDateFormat = data.created_at;
@@ -178,10 +181,55 @@ function getData() {
 
 
 function changeMode() {
+    
+    var body = document.body;
+    var headerTitle = document.getElementById("header-title");
+    var headerButton = document.getElementById("header-button");
+    const button = document.querySelector(".mode");
+    var searchBar = document.getElementById("searchBar");
+    var search = document.getElementById("search");
+    var infos = document.getElementById("infos");
+    var data = document.getElementById("grid-data");
+    
+    body.classList.toggle("dark-mode-body");
+    headerTitle.classList.toggle("dark-mode-text");
+    searchBar.classList.toggle("dark-background");
+    search.classList.toggle("dark-background");
+    search.classList.toggle('placeholderWhite');
+    infos.classList.toggle("dark-background");
+    date.classList.toggle("text-grayBlue");
+    named.classList.toggle("whiteText");
+    data.classList.toggle("dark-mode-body");
+    repos.classList.toggle("whiteText");
+    followers.classList.toggle("whiteText");
+    following.classList.toggle("whiteText");
+    loc.classList.toggle("whiteText");
+    website.classList.toggle("whiteText");
+    twitter.classList.toggle("whiteText");
+    company.classList.toggle("whiteText");
+    item1.classList.toggle("whiteImg");
+    item2.classList.toggle("whiteImg");
+    item3.classList.toggle("whiteImg");
+    item4.classList.toggle("whiteImg");
 
-    console.log("change mode");
+    if(button.getAttribute("data") === "light" ) {
+        headerButton.classList.toggle("dark-mode-text");
+        headerButton.innerHTML = 'Dark <img src="./assets/icon-moon.svg" alt="icon-moon-mode">';
+        button.setAttribute("data", "dark");
+        headerButton.classList.remove('hoverClass2');
+        headerButton.classList.add('hoverClass1');
+    } else {
+        headerButton.classList.toggle("dark-mode-text");
+        headerButton.innerHTML = 'Light <img src="./assets/icon-sun.svg" alt="icon-light-mode">';
+        button.setAttribute("data", "light");
+        headerButton.classList.remove('hoverClass1');
+        headerButton.classList.add('hoverClass2');
+    }
 };
 
+let dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-
+if (dark) {
+    changeMode();
+}; 
     
